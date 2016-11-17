@@ -18,6 +18,11 @@ suicides <- suicides %>%
 # facet by sex.
 
 
+line_by_age <-ggplot(suicides, aes(x=year, y=deaths, color=age)) +
+  geom_line(size = 2) +
+  facet_wrap(~sex, scales="free")
+line_by_age
+
 ##extra credit####
 
 one_state <- all_suicides[all_suicides$state=="Uttar Pradesh"] %>% 
